@@ -90,9 +90,8 @@
 		label = "STM32MP15-DK";
 		routing =
 			"Playback" , "MCLK",
-			"Capture" , "MCLK",
-			"MICL" , "Mic Bias";
-		dais = <&sai2a_port &sai2b_port &i2s2_port>;
+			"Capture" , "MCLK";
+		dais = <&sai2a_port &sai2b_port>;
 		status = "okay";
 	};
 
@@ -219,7 +218,7 @@
 		interrupts = <1 IRQ_TYPE_EDGE_FALLING>;
 		interrupt-parent = <&gpiog>;
 		#sound-dai-cells = <0>;
-		status = "okay";
+		status = "disabled";
 
 		ports {
 			#address-cells = <1>;
@@ -474,7 +473,7 @@
 	pinctrl-names = "default", "sleep";
 	pinctrl-0 = <&i2s2_pins_a>;
 	pinctrl-1 = <&i2s2_sleep_pins_a>;
-	status = "okay";
+	status = "disabled";
 
 	i2s2_port: port {
 		i2s2_endpoint: endpoint {
@@ -493,7 +492,7 @@
 	pinctrl-names = "default", "sleep";
 	pinctrl-0 = <&ltdc_pins_a>;
 	pinctrl-1 = <&ltdc_sleep_pins_a>;
-	status = "okay";
+	status = "disabled";
 
 	port {
 		ltdc_ep0_out: endpoint {
