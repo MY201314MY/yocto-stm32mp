@@ -94,7 +94,7 @@
 	};
 
 	panel_otm8009a: panel-otm8009a@0 {
-		compatible = "orisetech,otm8009a";
+		compatible = "techstar,ts8550b", "sitronix,st7701";
 		reg = <0>;
 		reset-gpios = <&gpioe 4 GPIO_ACTIVE_LOW>;
 		power-supply = <&v3v3>;
