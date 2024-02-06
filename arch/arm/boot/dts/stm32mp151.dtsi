@@ -1556,14 +1556,6 @@
 					nvmem-cells = <&vrefint>;
 					nvmem-cell-names = "vrefint";
 					status = "disabled";
-					channel@13 {
-						reg = <13>;
-						label = "vrefint";
-					};
-					channel@14 {
-						reg = <14>;
-						label = "vddcore";
-					};
 				};
 			};
 
