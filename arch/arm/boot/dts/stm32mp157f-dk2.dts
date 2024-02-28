@@ -39,6 +39,33 @@
 		compatible = "mmc-pwrseq-simple";
 		reset-gpios = <&gpioh 4 GPIO_ACTIVE_LOW>;
 	};
+
+	led {
+		compatible = "gpio-leds";
+
+		led-orange {
+			label = "orange";
+			gpios = <&gpioh 7 GPIO_ACTIVE_HIGH>;
+			default-state = "off";
+		};
+	};
+
+	button {
+		compatible = "gpio-keys";
+		autorepeat;
+
+		key-up {
+			label = "GPIO Key UP";
+			linux,code = <103>;
+			gpios = <&gpioa 13 GPIO_ACTIVE_LOW>;
+		};
+		
+		key-down {
+			label = "GPIO Key DOWN";
+			linux,code = <108>;
+			gpios = <&gpioa 14 GPIO_ACTIVE_LOW>;
+		};
+	};
 };
 
 &cryp1 {
@@ -174,4 +201,8 @@
 		vbat-supply = <&v3v3>;
 		vddio-supply = <&v3v3>;
 	};
+};
+
+&usart3 {
+	status = "okay";
 };
