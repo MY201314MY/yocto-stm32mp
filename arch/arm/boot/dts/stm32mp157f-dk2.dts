@@ -129,6 +129,12 @@
 
 &i2c5 {
 	status = "okay";
+
+	ina219@40 {
+		compatible = "ti,ina219";
+		reg = <0x40>;
+		shunt-resistor = <100000>; /* = 100 mOhm */
+	};
 };
 
 &spi5 {
