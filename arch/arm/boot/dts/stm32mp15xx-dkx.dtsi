@@ -151,7 +151,7 @@
 	pinctrl-names = "default", "sleep";
 	pinctrl-0 = <&cec_pins_b>;
 	pinctrl-1 = <&cec_sleep_pins_b>;
-	status = "okay";
+	status = "disabled";
 };
 
 &cpu0 {
@@ -489,9 +489,6 @@
 };
 
 &ltdc {
-	pinctrl-names = "default", "sleep";
-	pinctrl-0 = <&ltdc_pins_a>;
-	pinctrl-1 = <&ltdc_sleep_pins_a>;
 	status = "disabled";
 
 	port {
