@@ -294,8 +294,8 @@ static void mipi_dbi_fb_dirty(struct drm_framebuffer *fb, struct drm_rect *rect)
 		tr = data[0].vaddr; /* TODO: Use mapping abstraction properly */
 	}
 
-	mipi_dbi_set_window_address(dbidev, rect->x1, rect->x2 - 1, rect->y1,
-				    rect->y2 - 1);
+	mipi_dbi_set_window_address(dbidev, rect->x1 + 40, rect->x2 - 1 + 40, rect->y1 + 53,
+				    rect->y2 - 1 + 53);
 
 	ret = mipi_dbi_command_buf(dbi, MIPI_DCS_WRITE_MEMORY_START, tr,
 				   width * height * 2);
@@ -399,7 +399,7 @@ static void mipi_dbi_blank(struct mipi_dbi_dev *dbidev)
 
 	memset(dbidev->tx_buf, 0, len);
 
-	mipi_dbi_set_window_address(dbidev, 0, width - 1, 0, height - 1);
+	mipi_dbi_set_window_address(dbidev, 0, width - 1 + 40, 0, height - 1 + 53);
 	mipi_dbi_command_buf(dbi, MIPI_DCS_WRITE_MEMORY_START,
 			     (u8 *)dbidev->tx_buf, len);
 
