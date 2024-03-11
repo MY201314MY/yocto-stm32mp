@@ -138,7 +138,7 @@
 };
 
 &spi5 {
-	cs-gpios = <&gpiog 15 GPIO_ACTIVE_HIGH>;
+	cs-gpios = <&gpiof 6 GPIO_ACTIVE_HIGH>;
 	status = "okay";
 
 	spidev@0{
